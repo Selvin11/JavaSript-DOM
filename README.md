@@ -52,15 +52,32 @@ object.method()
 
 #####条件语句
 * if 语句
+  ​
+
+  ```javascript
   if(condition){
+
    statements;
+
   }else{
+
    statements;
+
   }
+
+  ```
+
 * while循环语句
+  ​
+
+  ```javascript
   while(condition){
+
    statements
+
   }
+
+  ```
 
  do{
  statements
@@ -202,6 +219,8 @@ BOM中的window对象
 
 #六、图片库改进版
 * 详情继续看第四章，一揽子计划
+  ​
+
   <b>源文件</b>
 ```javascript
 <!DOCTYPE html>
@@ -240,9 +259,8 @@ BOM中的window对象
   <p id="description">Choose an image.</p>
 </body>
 </html>
-</code></pre>
 
- <pre><code>
+<script> 
 function showPic(whichpic) {
   if (!document.getElementById("placeholder")) return true;
   var source = whichpic.getAttribute("href");
@@ -285,6 +303,7 @@ function addLoadEvent(func) {
   }
 }
 addLoadEvent(prepareGallery);
+</script>
 ```
 
 >HTML－DOM & DOM Core
@@ -301,10 +320,18 @@ document.form
 
 DOM方法
 
+```html
 <div id="testdiv">
+
 <p>This is <em>my</em> content.</p>
+
 </div>
+
+```
+
+
 透彻理解DOM节点,div有<b>属性节点“id='testdiv'”</b>、元素节点p等等
+
 * createElement方法
   document.createElement(nodeName)
   一般在创建新的元素节点之后，应该予以var进行变量赋值
