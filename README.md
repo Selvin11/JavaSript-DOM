@@ -566,6 +566,7 @@ if (dlist.childNodes.length < 1) return false;
 > for ie6, abbr 标签在ie7之后才被支持
 
 
+
 > 接下来：2.显示文献来源链接表
 
 ```javascript
@@ -670,7 +671,7 @@ function getNextElement(node) {
 
 
 
-- 一直迷惑的className属性
+- 一直迷惑的className属性（可读写，凡是节点元素均有此属性）
 
   不知怎么回事，它总是突然出现，然后让我有些懵逼。（**主要是和nodeName弄混淆了，className会真的返回“p”标签中的class叫什么，而nodeName返回的就是“p”字符串！**）
 
@@ -687,6 +688,7 @@ function getNextElement(node) {
       addClass(elem,"intro");
     }
   }
+  //直接更改className的value值，会导致直接替换掉，所以使用此函数
   function addClass(element,value) {
     if (!element.className) {
       element.className = value;
@@ -707,6 +709,63 @@ function getNextElement(node) {
   ```
 
 
+> 对函数进行抽象
+
+将非常具体的东西改进为较为通用的东西的过程叫做*抽象*（真的好抽象呢🌝）
+
+```javascript
+function styleHeaderSiblings() {
+  if (!document.getElementsByTagName) return false;
+  var headers = document.getElementsByTagName("h1");
+  for (var i=0; i<headers.length; i++) {
+    var elem = getNextElement(headers[i].nextSibling);
+    addClass(elem,"intro");
+  }
+}
+//完美
+function styleHeaderSiblings(tag,theclass) {
+  if (!document.getElementsByTagName) return false;
+  var headers = document.getElementsByTagName("tag");
+  for (var i=0; i<headers.length; i++) {
+    var elem = getNextElement(headers[i].nextSibling);
+    addClass(elem,"theclass");
+  }
+}
+```
 
 
+
+# 十、用JavaScript实现动画效果
+
+> 激动中：动画什么的最喜欢了
+
+动画就是让元素的位置随着时间而不断地发生变化。what，are you kidding me~
+
+- setTimeout函数（JS）
+
+  setTimeout("function" , interval)
+
+  绝大多数时候，会把这个函数赋值给一个变量。
+
+- clearTimeout函数
+
+  clearTimeout(variable)
+
+  取消执行函数
+
+- 运用style.top&style.left等位置属性确认元素当前位置
+
+- parseInt函数（JS）
+
+  parseInt(string)
+
+  parseInt("39 steps")➤39
+
+  可以将字符串里的数值信息提取出来,通常都是整数
+
+  有小数点的数值使用parseFloat函数
+
+
+
+# 十一、HTML5
 
