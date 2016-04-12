@@ -55,7 +55,7 @@
 
   怎么理解，函数写好后，就像锤子造好了，钉子、板子放那里了，你得用锤子敲钉子，才能造房子啊。这里的敲击就是事件，说白了，就是使用锤子的场景（诱因），也就是函数对应锤子，事件处理函数对应敲击事件。
 
-  > 事件处理函数的机制，一旦事件发生，对应的代码酒会执行，之后会反馈一个布尔值，这个值又会返回事件处理函数，告诉它能做还是不能做，true就开搞，false就算了。
+  > 事件处理函数的机制，一旦事件发生，对应的代码就会执行，之后会反馈一个布尔值，这个值又会返回事件处理函数，告诉它能做还是不能做，true就开搞，false就算了。
 
 
 - this到底是什么？
@@ -115,6 +115,16 @@
 - **if(something != null)与if(something)完全等价。**
 
   **if(something = null)与if(!something)完全等价。**
+
+- **JavaScript String对象中的indexOf方法**
+
+  ```javascript
+  stringObject.indexOf(searchvalue,fromindex)
+  ```
+
+  该方法将从头到尾地检索字符串 stringObject，看它是否含有子串 searchvalue。开始检索的位置在字符串的 fromindex 处或字符串的开头（没有指定 fromindex 时）。如果找到一个 searchvalue，则返回 searchvalue 的第一次出现的位置。stringObject 中的字符位置是从 0 开始的。
+
+  **注释：如果要检索的字符串值没有出现，则该方法返回 -1。**
 
 
 

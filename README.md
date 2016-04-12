@@ -83,21 +83,39 @@ object.method()
    statements
 
   }
+  ```
+
+  ```javascript
+  do{
+
+   statements
+
+  }while(conditions) 至少执行一次
+  ```
+
+​       
+
+* for循环
+  ​
+
+  ```javascript
+  for(initial condition; test condition; alter condition){
+
+  }
 
   ```
 
- do{
- statements
-}while(conditions) 至少执行一次
-
-* for循环
-  for(initial condition; test condition; alter condition){
-  }
-
 #####函数
-* function name(arguments){
+* ```javascript
+  function name(arguments){
+
    statements
+
   }
+
+  ```
+
+  ​
   可以传递任意参数！！！
   自建函数和JS内建函数（alert...）
   我们完全可以创建一个函数并让它返回（return）任意我们需要的，只需调用即可。
@@ -129,7 +147,7 @@ object.method()
 3.document.getElementByClassName()
 HTML5 DOM 
 实现方式
-```
+```javascript
   getElementByClassName(node,classname){
     if(node.getElementByClassName!=null){
     return  node.getElementByClassName(classname);
@@ -769,3 +787,4 @@ function styleHeaderSiblings(tag,theclass) {
 
 # 十一、HTML5
 
+- canvas、vedio、audio、form...
